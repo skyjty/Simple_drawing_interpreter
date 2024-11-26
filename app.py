@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from Scanner import *
 from Semantic import *
-import os
+# import os
 
 app = Flask(__name__)
 

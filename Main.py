@@ -1,6 +1,5 @@
 import Scanner
 from Semantic import *
-from Semantic_save import *
 from Scanner import *
 from Token import *
 
@@ -52,7 +51,7 @@ color is (255,0,0);
 for t from -pi to pi step pi/200 draw((2*cos(t) - cos(2*t)),  (2*sin(t)-sin(2*t))  );
 '''
 
-test2 = '''------- 函数f(t)=t的图形
+test_str2 = '''------- 函数f(t)=t的图形
 origin is (0, 0);	-- 设置原点的偏移量
 scale is (2, 1);	-- 设置横、纵坐标缩放比例
 rot is pi/2;		-- 设置旋转角度
@@ -62,7 +61,7 @@ for T from 0 to 150 step 1 draw (t, t);	-- f(t)=t
 '''
 
 scanner = Scanner(heart_str)
-# print(scanner.GetLog())
+print(scanner.GetLog())
 
 semantic = Semantic(scanner)
 
@@ -70,7 +69,6 @@ semantic.init()
 semantic.Parser()
 
 save_path = "./static/test.png"
-# semantic.ShowFig()
 semantic.SaveFig(save_path)
 
-# print(semantic.GetLog())
+print(semantic.GetLog())

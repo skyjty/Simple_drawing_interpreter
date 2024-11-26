@@ -20,9 +20,9 @@ class Parser(object):
         self.ParserOutput = ''
         self.color = [0,0,0]
 
-    def error_exit(self,error_num):
-        self.log(f"Quit with error num {error_num}.")
-        sys.exit(1)
+    # def error_exit(self,error_num):
+    #     self.log(f"Quit with error num {error_num}.")
+    #     sys.exit(1)
 
     def enter(self,x):
         self.log(f"Enter {x}")
@@ -362,7 +362,6 @@ class Parser(object):
             self.ParserOutput += f"{message}\n"
         else:
             self.ParserOutput += message
-
 
     def GetLog(self):
         return self.ParserOutput
