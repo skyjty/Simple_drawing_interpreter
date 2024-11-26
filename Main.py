@@ -52,7 +52,7 @@ for t from -pi to pi step pi/200 draw((2*cos(t) - cos(2*t)),  (2*sin(t)-sin(2*t)
 '''
 
 test_str2 = '''------- 函数f(t)=t的图形
-origin is (0, 0);	-- 设置原点的偏移量
+origin is (1, 100);	-- 设置原点的偏移量
 scale is (2, 1);	-- 设置横、纵坐标缩放比例
 rot is pi/2;		-- 设置旋转角度
 for T from 0 to 200 step 1 draw (t, 0);	-- 横坐标
@@ -60,7 +60,7 @@ for T from 0 to 180 step 1 draw (0, t);	-- 纵坐标
 for T from 0 to 150 step 1 draw (t, t);	-- f(t)=t
 '''
 
-scanner = Scanner(heart_str)
+scanner = Scanner(test_str2)
 print(scanner.GetLog())
 
 semantic = Semantic(scanner)
