@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Interpreter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="rowcontainer">
+        <div class="container1">
+            <!-- 输入字符串 -->
+            <div class="block">
+                <h3>Input</h3>
+                <form method="POST">
+                    <textarea name="code" rows="10" placeholder="Enter your code here..."></textarea>
+                    <button type="submit">Run</button>
+                </form>
+            </div>
+
+            <!-- 显示词法分析器输出 -->
+            <div class="block">
+                <h3>Lexer Output</h3>
+                <textarea readonly rows="10">{{ lexer_output }}</textarea>
+            </div>
+
+            <!-- 显示语法分析器输出 -->
+            <div class="block">
+                <h3>Parser Output</h3>
+                <textarea readonly rows="10">{{ parser_output }}</textarea>
+            </div>
+
+            
+        </div>
+        <div class="container2">
+            <!-- 显示结果图片 -->
+            <div class="block">
+                <h3>Result Image</h3>
+                {% if img_path %}
+                    <img src="{{ img_path }}" alt="Result Image">
+                {% else %}
+                    <p>No image generated.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
